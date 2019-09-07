@@ -1,13 +1,13 @@
 {
-    "name": "fabieno/twitch-api",
+    "name": "sevenpluss/twitch-api",
     "description": "The twitch helix api",
     "keywords": ["php", "Twitch", "Api", "Helix"],
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Fabien Oram",
-            "email": "fabien@lamephp.com",
+            "name": "Vlad Radchenko",
+            "email": "westen7ua@gmail.com",
             "role": "Developer"
         }
     ],
