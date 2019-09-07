@@ -19,6 +19,28 @@ class Clips implements ApiClips
 
     protected const ENDPOINT_CLIPS = 'clips';
 
+	/**
+	 * @inheritDoc
+	 */
+	public function getClips(array $options, PaginatorContract $paginator = null): ResultContract
+	{
+		if (!isset($options['id'], $options['user_id'], $options['game_id']) && !array_key_exists('id', $options) && !array_key_exists('user_id', $options) && !array_key_exists('game_id', $options)) {
+			throw new BadMethodCallException('The required options missed: id, user_id or game_id');
+		}
+
+		return $this->request()->get(self::URL_VIDEOS, $options, $paginator);
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function getClipsByUserId(string $user_id, array $options = [], PaginatorContract $paginator = null): ResultContract
+	{
+		$options['user_id'] = $user_id;
+
+		return $this->getClips($options, $paginator);
+	}
+
     /**
      * @inheritDoc
      */
