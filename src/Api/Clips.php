@@ -28,7 +28,7 @@ class Clips implements ApiClips
 			throw new BadMethodCallException('The required options missed: id, user_id or game_id');
 		}
 
-		return $this->request()->get(self::URL_VIDEOS, $options, $paginator);
+		return $this->request()->get(self::ENDPOINT_CLIPS, $options, $paginator);
 	}
 
 	/**
